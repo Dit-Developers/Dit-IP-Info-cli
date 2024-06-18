@@ -1,5 +1,5 @@
 
-# DIT IP Info Tool
+# DIT IP Info cli Tool
 
 ## Features:
 
