@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .function {
+            margin-bottom: 20px;
+        }
+        .function h2 {
+            color: #007BFF;
+        }
+        .description {
+            margin: 10px 0;
+        }
+        .example {
+            font-family: monospace;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tool Functions</h1>
+
+        <div class="function">
+            <h2>info(ip)</h2>
+            <div class="description">Description: Retrieves detailed information about the specified IP address.</div>
+            <div class="example">Example: info("8.8.8.8")</div>
+        </div>
+
+        <div class="function">
+            <h2>ping(ip)</h2>
+            <div class="description">Description: Sends ICMP echo requests to check the reachability of an IP address.</div>
+            <div class="example">Example: ping("8.8.8.8")</div>
+        </div>
+
+        <div class="function">
+            <h2>get_website_ip(website)</h2>
+            <div class="description">Description: Retrieves the IP address of a specified website.</div>
+            <div class="example">Example: get_website_ip("example.com")</div>
+        </div>
+
+        <div class="function">
+            <h2>get_local_ip()</h2>
+            <div class="description">Description: Gets the local IP address of the system.</div>
+            <div class="example">Example: local_ip = get_local_ip()</div>
+        </div>
+
+        <div class="function">
+            <h2>clear_screen()</h2>
+            <div class="description">Description: Clears the terminal screen.</div>
+            <div class="example">Example: clear_screen()</div>
+        </div>
+
+        <div class="function">
+            <h2>nmap_scan(ip, arguments='')</h2>
+            <div class="description">Description: Performs an Nmap scan on the specified IP address with optional Nmap arguments.</div>
+            <div class="example">Example: nmap_scan("192.168.1.1", "-p 22-443")</div>
+        </div>
+
+        <div class="function">
+            <h2>web_app_enum(ip)</h2>
+            <div class="description">Description: Performs web application enumeration.</div>
+            <div class="example">Example: web_app_enum("192.168.1.1")</div>
+        </div>
+    </div>
+</body>
+</html>

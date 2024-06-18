@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIT IP Info Tool Documentation</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, nav, main, section {
+            transition: all 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            padding: 8px 12px;
+            color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Media query for responsive styles */
+        @media screen and (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                background-color: #1a1a1a;
+                padding: 10px 0;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .navbar-nav.active {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                z-index: 1000;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .nav-link {
+                padding: 8px;
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #ffffff;
+            }
+
+            /* Style code tags as terminal */
+            code {
+                background-color: black;
+                color: white;
+                padding: 2px 5px;
+                font-family: monospace;
+            }
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+            margin-top: 70px; /* Adjust based on your navbar height */
+        }
+
+        section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        /* Hover effect for commands list */
+        #commands li:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for headers */
+        h1, h2, h3 {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            nav .ul {
+                flex-wrap: wrap;
+            }
+
+            nav .ul .li {
+                margin: 10px 0;
+            }
+
+            nav .ul .li .a {
+                padding: 8px;
+            }
+        }
+        #disclaimer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #disclaimer h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #disclaimer p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">DIT</div>
+            <div class="navbar-toggle">&#9776;</div>
+            <ul class="navbar-nav ul">
+                <li class="nav-item li"><a href="#usage" class="nav-link a">Usage</a></li>
+                <li class="nav-item li"><a href="#supported" class="nav-link a">Supported Operating Systems</a></li>
+                <li class="nav-item li"><a href="#installation" class="nav-link a">Installation</a></li>
+                <li class="nav-item li"><a href="#how-it-works" class="nav-link a">How It Works</a></li>
+                <li class="nav-item li"><a href="#commands" class="nav-link a">Commands</a></li>
+                <li class="nav-item li"><a href="#developer-info" class="nav-link a">Developer Info</a></li>
+            </ul>
+        </nav>
+        <script>
+            // JavaScript for navbar scroll effect
+            window.addEventListener("scroll", () => {
+                const navbar = document.querySelector(".navbar");
+                if (window.scrollY > 0) {
+                    navbar.classList.add("navbar-scroll");
+                } else {
+                    navbar.classList.remove("navbar-scroll");
+                }
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const navbarToggle = document.querySelector(".navbar-toggle");
+                const navbarNav = document.querySelector(".navbar-nav");
+
+                navbarToggle.addEventListener("click", () => {
+                    navbarNav.classList.toggle("active");
+                });
+            });
+        </script>
+    </header>
+    <main>
+        <h1>DIT IP Info Tool Documentation</h1>
+
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>The DIT IP Info Tool is a Python script that allows users to retrieve IP-related information, perform network tasks such as pinging and Nmap scans, and get details about web applications. It provides a simple command-line interface for these functionalities.</p>
+        </section>
+        <section id="supported-os">
+            <h2>Supported Operating Systems</h2>
+            <p>This tool is compatible with Windows, macOS, and Linux operating systems.</p>
+        </section>
+        <section id="installation">
+            <h2>Installation</h2>
+            <p>You can install the tool using the following steps:</p>
+            <ol>
+                <li>Clone the repository from GitHub:</li>
+                <code>git clone https://github.com/dit-developers/dit-ip-info</code>
+                <li>Navigate to the cloned directory:</li>
+                <code>cd dit-ip-info</code>
+                <li>Run the script:</li>
+                <code>python3 dit_ip_info.py</code>
+            </ol>
+        </section>
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <p>The tool uses various Python libraries such as requests, subprocess, os, socket, nmap, and rich to perform its functions. Here's an overview of its main functionalities:</p>
+            <ul>
+                <li>Retrieve IP Information</li>
+                <ul>
+                    <li>Get your own IP address.</li>
+                    <li>Retrieve detailed information about any IP address using the ip-api.com service.</li>
+                </ul>
+                <li>Network Tasks</li>
+                <ul>
+                    <li>Ping an IP address to check its availability.</li>
+                    <li>Get the IP address of a website.</li>
+                </ul>
+                <li>Local Network</li>
+                <ul>
+                    <li>Get your local IP address.</li>
+                </ul>
+                <li>Nmap Scanning</li>
+                <ul>
+                    <li>Perform an Nmap scan on an IP address.</li>
+                </ul>
+                <li>Web Application Enumeration</li>
+                <ul>
+                    <li>Perform enumeration tasks on web applications (you can replace this with your own script).</li>
+                </ul>
+            </ul>
+        </section>
+        <section id="commands">
+            <h2>Commands</h2>
+            <ul>
+                <li><code>1:</code> Get your IP address.</li>
+                <li><code>2:</code> Retrieve detailed information about any IP address.</li>
+                <li><code>3:</code> Information about the tool developer.</li>
+                <li><code>4:</code> Ping an IP address.</li>
+                <li><code>5:</code> Get the IP address of a website.</li>
+                <li><code>6:</code> Get your local IP address.</li>
+                <li><code>7:</code> Perform an Nmap scan on an IP address.</li>
+            </ul>
+        </section>       
+         <section id="developer-info">
+            <h2>Developer Info</h2>
+            <p>The DIT IP Info Tool is developed by DIT Developers. For more information, you can contact us at <a href=https://msue.vercel.app#contact">contact</a>.</p>
+        </section>
+        <section id="disclaimer">
+            <h2 style="color: red;">Disclaimer</h2>
+            <p>This tool is created for educational purposes only. It is not intended for any malicious activities or unauthorized use. The developers of this tool are not responsible for any misuse or damage caused by its usage.</p>
+        </section>
+    </main>
+</body>
+</html>

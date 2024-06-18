@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap Scan Examples</title>
+</head>
+<body>
+    <h1>Nmap Scan Examples</h1>
+    <ul>
+        <li># Example 1<br>nmap_scan("192.168.0.1", "-p 80")</li>
+        <li># Example 2<br>nmap_scan("192.168.1.1", "-sV")</li>
+        <li># Example 3<br>nmap_scan("8.8.8.8", "-A")</li>
+        <li># Example 4<br>nmap_scan("192.168.1.100", "-T4")</li>
+        <li># Example 5<br>nmap_scan("10.0.0.1", "-p 22,80,443")</li>
+        <li># Example 6<br>nmap_scan("172.16.0.1", "--top-ports 10")</li>
+        <li># Example 7<br>nmap_scan("203.0.113.1", "-O")</li>
+        <li># Example 8<br>nmap_scan("198.51.100.1", "-Pn")</li>
+        <li># Example 9<br>nmap_scan("192.168.1.50", "-sS")</li>
+        <li># Example 10<br>nmap_scan("192.168.1.254", "-sU -p 53")</li>
+        <li># Example 11<br>nmap_scan("203.0.113.2", "-sT")</li>
+        <li># Example 12<br>nmap_scan("198.51.100.2", "-F")</li>
+        <li># Example 13<br>nmap_scan("192.168.2.1", "-p 8080")</li>
+        <li># Example 14<br>nmap_scan("10.0.1.1", "-T5")</li>
+        <li># Example 15<br>nmap_scan("172.16.1.1", "-sP")</li>
+        <li># Example 16<br>nmap_scan("203.0.113.3", "-p 21,22,25")</li>
+        <li># Example 17<br>nmap_scan("198.51.100.3", "-sV --version-all")</li>
+        <li># Example 18<br>nmap_scan("192.168.3.1", "-O -v")</li>
+        <li># Example 19<br>nmap_scan("10.0.2.1", "--script vuln")</li>
+        <li># Example 20<br>nmap_scan("172.16.2.1", "-sC")</li>
+        <li># Example 21<br>nmap_scan("203.0.113.4", "-A -T4")</li>
+        <li># Example 22<br>nmap_scan("198.51.100.4", "-p-")</li>
+        <li># Example 23<br>nmap_scan("192.168.4.1", "-T2")</li>
+        <li># Example 24<br>nmap_scan("10.0.3.1", "--script=ssl-heartbleed")</li>
+        <li># Example 25<br>nmap_scan("172.16.3.1", "-p 80 --open")</li>
+        <li># Example 26<br>nmap_scan("203.0.113.5", "-sV --version-intensity 5")</li>
+        <li># Example 27<br>nmap_scan("198.51.100.5", "-sS -sU")</li>
+        <li># Example 28<br>nmap_scan("192.168.5.1", "-T3")</li>
+        <li># Example 29<br>nmap_scan("10.0.4.1", "--traceroute")</li>
+        <li># Example 30<br>nmap_scan("172.16.4.1", "-sV --script=http-enum")</li>
+        <li># Example 31<br>nmap_scan("203.0.113.6", "-p 80,443 -A")</li>
+        <li># Example 32<br>nmap_scan("198.51.100.6", "-p 22 --open")</li>
+        <li># Example 33<br>nmap_scan("192.168.6.1", "-sT -O")</li>
+        <li># Example 34<br>nmap_scan("10.0.5.1", "-T1")</li>
+        <li># Example 35<br>nmap_scan("172.16.5.1", "--top-ports 20")</li>
+        <li># Example 36<br>nmap_scan("203.0.113.7", "-sV --script ssl-cert")</li>
+        <li># Example 37<br>nmap_scan("198.51.100.7", "-p 443 --script ssl-enum-ciphers")</li>
+        <li># Example 38<br>nmap_scan("192.168.7.1", "-sU -T4")</li>
+        <li># Example 39<br>nmap_scan("10.0.6.1", "--top-ports 100")</li>
+        <li># Example 40<br>nmap_scan("172.16.6.1", "-sV --allports")</li>
+        <li># Example 41<br>nmap_scan("203.0.113.8", "-O --osscan-guess")</li>
+        <li># Example 42<br>nmap_scan("198.51.100.8", "-p 8080 --script http-methods")</li>
+        <li># Example 43<br>nmap_scan("192.168.8.1", "-T2 --open")</li>
+        <li># Example 44<br>nmap_scan("10.0.7.1", "--script dns-brute")</li>
+        <li># Example 45<br>nmap_scan("172.16.7.1", "-p 80,443 --script http-title")</li>
+        <li># Example 46<br>nmap_scan("203.0.113.9", "-A -T3")</li>
+        <li># Example 47<br>nmap_scan("198.51.100.9", "-p 53,88,135")</li>
+        <li># Example 48<br>nmap_scan("192.168.9.1", "-sS -O")</li>
+        <li># Example 49<br>nmap_scan("10.0.8.1", "-sP -n")</li>
+        <li># Example 50<br>nmap_scan("172.16.8.1", "--script smb-enum-shares")</li>
+        <li># Example 51<br>nmap_scan("203.0.113.10", "-p 3306 --open")</li>
+        <li># Example 52<br>nmap_scan("198.51.100.10", "-sT --top-ports 50")</li>
+        <li># Example 53<br>nmap_scan("192.168.10.1", "-p 21,23,80,443")</li>
+        <li># Example 54<br>nmap_scan("10.0.9.1", "-T1 -sS")</li>
+        <li># Example 55<br>nmap_scan("172.16.9.1", "--script ssh-hostkey")</li>
+        <li># Example 56<br>nmap_scan("203.0.113.11", "-p 1-1024 -T4")</li>
+        <li># Example 57<br>nmap_scan("198.51.100.11", "-sU --top-ports 200")</li>
+        <li># Example 58<br>nmap_scan("192.168.11.1", "-sV --script=default")</li>
+        <li># Example 59<br>nmap_scan("10.0.10.1", "-p 80,443,8080 --open")</li>
+        <li># Example 60<br>nmap_scan("172.16.10.1", "-T3 --open")</li>
+    </ul>
+</body>
+</html>
+<style>
+    /* Reset some basic elements for consistency across browsers */
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply basic styling to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Style the heading */
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Style the list */
+ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+ul li br {
+    display: block;
+    margin: 5px 0;
+}
+
+</style>
