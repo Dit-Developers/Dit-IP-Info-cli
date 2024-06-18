@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dit-IP-Info CLI Tool</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 1rem;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.hero {
+    background: url('bg.png') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 10rem 1rem;
+    position: relative;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+}
+
+.lookup {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.lookup h2 {
+    margin-bottom: 2rem;
+}
+
+.lookup form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lookup input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    width: 300px;
+}
+
+.lookup button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.lookup button:hover {
+    background-color: #0056b3;
+}
+/* styles.css */
+#features {
+    padding: 5rem 1rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#features .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#features .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 1rem;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 30%;
+}
+
+#features .card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #333;
+}
+
+#features .card p,
+#features .card ul {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+#features .card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+#features .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #features .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #features .card {
+        max-width: 80%;
+        margin: 1rem 0;
+    }
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">        <img src="ip.png" width="40px" alt="Hero Image" class="hero-img">
+            IP Info Tool</a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#footer">Download</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="container">
+        <h1>Welcome to the IP Info Lookup Tool</h1>
+        <p>Retrieve detailed information about any IP address with ease.</p>
+        <a href="#features" class="btn">Learn More</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="cards">
+    <div class="container">
+        <div class="card">
+            <h2>Feature 1</h2>
+            <ul>
+                <li>Get your IP address.</li>
+                <li>Retrieve detailed information about any IP address.</li>
+                <li>Information about the Developer.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Feature 2</h2>
+            <ul>
+                <li>Ping an IP address.</li>
+                <li>Get the IP address of a website.</li>
+                <li>Get your local IP address.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Feature 3</h2>
+            <ul>
+                <li>Perform an Nmap scan on an IP address.</li>
+                <li>Perform web application enumeration.</li>
+                <li>Easy to use and integrate into your workflow.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="download">
+        <p style="font-size: larger;">Download the tool from <a href="https://github.com/Dit-Developers/Dit-IP-Info-cli">GitHub</a></p>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <a href="https://msue.vercel.app">©Dit-Developers</a>
+    </div>
+</footer>
+
+</body>
+</html>
