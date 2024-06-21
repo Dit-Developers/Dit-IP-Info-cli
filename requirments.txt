@@ -1,0 +1,7 @@
+requests
+sys
+subprocess
+os
+socket
+python-nmap
+rich
