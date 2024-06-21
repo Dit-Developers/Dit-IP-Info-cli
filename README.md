@@ -30,6 +30,44 @@ The tool is designed to be run from the command line. It presents a menu where y
 
 The tool maps user input to specific functions based on the selected menu option, allowing users to execute different tasks related to IP addresses and network scanning.
 
+## Installing:
+=================
+### How to Install Dit-IP-Info-cli Tool in Termux
+- `pkg update && pkg `
+- `pkg install git python`
+- `git clone https://github.com/Dit-Developers/Dit-IP-Info-cli.git`
+- `pip install -r requirements.txt`
+- `cd Dit-IP-Info-cli`
+- `python dit-ip-info.py`
+=================
+### How to Install Dit-IP-Info-cli Tool in Kali linux
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install git python3 python3-pip -y`
+- `git clone https://github.com/Dit-Developers/Dit-IP-Info-cli.git`
+- `cd Dit-IP-Info-cli`
+- `python dit-ip-info.py`
+
+
+# Dit-IP-Info-cli Tool Installation Guide for Windows
+
+## Prerequisites
+- Python installed on your system. If not, download and install Python from [here](https://www.python.org/downloads/windows/).
+- Git installed on your system. If not, download and install Git from [here](https://git-scm.com/downloads).
+
+## Installation Steps
+
+1. **Open Command Prompt (cmd) as Administrator:**
+   - Search for "cmd" in the Windows search bar.
+   - Right-click on "Command Prompt" and select "Run as administrator".
+
+2. **Install Required Libraries:**
+   Run the following commands in Command Prompt to install the required libraries:
+   ```cmd
+   pip install requests
+   pip install python-nmap
+   pip install rich
+
+
 ## Developer Name:
 
 The tool is developed by DIT-Developers.
